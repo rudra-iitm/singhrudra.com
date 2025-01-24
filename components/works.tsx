@@ -21,7 +21,7 @@ const projects: ProjectProps[] = [
     description: "A personal portfolio website built with React, TailwindCSS, and ShadCN. It is deployed on github pages and coded in VS Code.",
     tech: ["React", "TailwindCSS", "ShadCN", "Github Pages"],
     github: "https://github.com/rudra-iitm/rudra-iitm.github.io",
-    projectLink: "https://rudra-iitm.github.io",
+    projectLink: "https://v1.singhrudra.com",
   },
   {
     name: "Web Dock",
