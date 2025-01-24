@@ -5,6 +5,7 @@ import Spotlight, { SpotlightCard } from "@/components/spotlight";
 import Header from "@/components/header";
 import SocialSidebar from "@/components/social-sidebar";
 import EmailSidebar from "@/components/email-sidebar";
+import Footer from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,7 @@ export default function RootLayout({
             <SocialSidebar />
             <EmailSidebar />
             {children}
+            <Footer />
           </SpotlightCard>
         </Spotlight>
       </body>

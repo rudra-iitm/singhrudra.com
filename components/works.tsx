@@ -1,8 +1,9 @@
 "use client"
 import React from "react"
-import { Github, ExternalLink } from "lucide-react"
+import { Github, Link2 } from "lucide-react"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import HeroVideoDialog from "./ui/hero-video-dialog"
 
 export interface ProjectProps {
   name: string
@@ -11,6 +12,7 @@ export interface ProjectProps {
   github: string
   projectLink: string
   image?: string
+  preview?: string
 }
 
 const projects: ProjectProps[] = [
@@ -20,13 +22,15 @@ const projects: ProjectProps[] = [
     tech: ["React", "TailwindCSS", "ShadCN", "Github Pages"],
     github: "https://github.com/rudra-iitm/rudra-iitm.github.io",
     projectLink: "https://rudra-iitm.github.io",
+    preview: "/portfolio-v1.mp4",
   },
   {
     name: "Web Dock",
     description: "A web application which lets you develop nodejs inside your browser.",
     tech: ["Next.js", "Web Containers", "TailwindCSS", "Acerernity UI", "SahdCN"],
     github: "https://github.com/rudra-iitm/web-dock",
-    projectLink: "https://web-dock.vercel.app/",
+    projectLink: "https://web-dock.vercel.app",
+    image: "/web-dock.png",
   },
   {
     name: "Chess Actions",
@@ -48,16 +52,16 @@ const projects: ProjectProps[] = [
     description: "A real-time multiplayer chess game allowing users to connect randomly and engage with other online players or bot.",
     tech: ["Next.js", "TailwindCSS", "Framer Motion", "Github Pages"],
     github: "https://github.com/rudra-iitm/singhrudra.com",
-    projectLink: "/",
+    projectLink: "https://singhrudra.com",
   },
 ]
 
 const Works = () => {
   return (
-    <div className="min-h-screen p-4">
-      <div className="text-3xl font-bold my-10 flex items-center gap-4">
+    <div className="min-h-screen p-16" id="works">
+      <div className="text-3xl font-bold max-w-3xl my-10 flex items-center gap-4">
         <span className="text-violet-600 text-2xl">03.</span> Something I’ve Worked On
-        <div className="h-[1px] w-96 bg-violet-600 glow-violet vertical" />
+        <div className="h-[1px] flex-grow bg-violet-600 glow-violet vertical" />
       </div>
       {projects.map((project, index) => (
         <Project key={project.name} project={project} reversed={index % 2 !== 0} />
@@ -75,11 +79,11 @@ function Project({ project, reversed = false }: { project: ProjectProps; reverse
         <div className={`relative flex flex-col ${reversed ? "md:flex-row-reverse" : "md:flex-row"} items-center`}>
           {/* Project Details */}
           <div
-            className={`w-full md:w-1/2 space-y-6 z-20 relative ${reversed ? "md:pl-8 text-right" : "md:pr-8 text-left"}`}
+            className={`w-full md:w-1/2 space-y-6 z-10 mb-2 relative ${reversed ? "md:pl-8 text-right" : "md:pr-8 text-left"}`}
           >
             <div className="space-y-2">
               <p className="text-violet-600 font-mono">Featured Project</p>
-              <h2 className="text-4xl font-bold text-slate-100">{project.name}</h2>
+              <h2 className="text-4xl font-bold text-slate-100 max-w-md">{project.name}</h2>
             </div>
 
             <div className="bg-slate-800/50 p-6 rounded-lg backdrop-blur-sm shadow-lg">
@@ -94,13 +98,21 @@ function Project({ project, reversed = false }: { project: ProjectProps; reverse
               >
                 <Github className="w-5 h-5" />
               </a>
+              { project.preview &&
+                <HeroVideoDialog
+                  animationStyle="from-center"
+                  videoSrc="project.preview"
+                />
+              }
+              { project.projectLink &&
               <a
                 href={project.projectLink}
                 className="hover:text-violet-600 transition-colors"
                 aria-label="View Live Project"
               >
-                <ExternalLink className="w-5 h-5" />
+                <Link2 className="w-5 h-5" />
               </a>
+              }
             </div>
           </div>
 

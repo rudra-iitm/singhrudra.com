@@ -1,6 +1,6 @@
 "use client"
 
-import { Github, Linkedin, ExternalLink, Instagram, Twitter } from "lucide-react"
+import { Github, Linkedin, Twitter } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 
@@ -31,31 +31,19 @@ export default function SocialSidebar() {
       <div className="flex flex-col items-center gap-6">
         <div className="flex flex-col gap-4">
           <motion.div variants={item}>
-            <Link href="https://github.com" target="_blank" className="block p-2" aria-label="GitHub Profile">
+            <Link href="https://github.com/rudra-iitm" target="_blank" className="block p-2" aria-label="GitHub Profile">
               <Github className="w-5 h-5 text-gray-400 hover:text-violet-600 transform hover:-translate-y-1 transition-all duration-300" />
             </Link>
           </motion.div>
 
           <motion.div variants={item}>
-            <Link href="https://linkedin.com" target="_blank" className="block p-2" aria-label="LinkedIn Profile">
+            <Link href="https://www.linkedin.com/in/rudra-iitm/" target="_blank" className="block p-2" aria-label="LinkedIn Profile">
               <Linkedin className="w-5 h-5 text-gray-400 hover:text-violet-600 transform hover:-translate-y-1 transition-all duration-300" />
             </Link>
           </motion.div>
 
           <motion.div variants={item}>
-            <Link href="#" target="_blank" className="block p-2" aria-label="Portfolio">
-              <ExternalLink className="w-5 h-5 text-gray-400 hover:text-violet-600 transform hover:-translate-y-1 transition-all duration-300" />
-            </Link>
-          </motion.div>
-
-          <motion.div variants={item}>
-            <Link href="https://instagram.com" target="_blank" className="block p-2" aria-label="Instagram Profile">
-              <Instagram className="w-5 h-5 text-gray-400 hover:text-violet-600 transform hover:-translate-y-1 transition-all duration-300" />
-            </Link>
-          </motion.div>
-
-          <motion.div variants={item}>
-            <Link href="https://twitter.com" target="_blank" className="block p-2" aria-label="Twitter Profile">
+            <Link href="https://x.com/rudransh_rps" target="_blank" className="block p-2" aria-label="Twitter Profile">
               <Twitter className="w-5 h-5 text-gray-400 hover:text-violet-600 transform hover:-translate-y-1 transition-all duration-300" />
             </Link>
           </motion.div>
@@ -65,4 +53,3 @@ export default function SocialSidebar() {
     </motion.div>
   )
 }
-

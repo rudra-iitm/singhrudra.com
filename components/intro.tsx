@@ -1,6 +1,6 @@
 import React from 'react'
 import { TypewriterEffectSmooth } from './ui/typewriter-effect'
-import { Button } from './ui/button'
+import { GetInTouch } from './ui/getintouch';
 
 const Intro = () => {
     const words = [
@@ -31,7 +31,7 @@ const Intro = () => {
       ];
 
   return (
-    <div className='flex mx-auto min-h-lvh items-center'>
+    <div className='flex mx-auto min-h-lvh items-center px-16'>
     <div className="flex-col">
     <div className="text-violet-600 text-lg">
       Hi, my name is 
@@ -46,7 +46,7 @@ const Intro = () => {
       I’m a BTech CSE student at IIT Mandi and a Full Stack Developer. I specialize in creating efficient websites and actively build projects leveraging containerization technologies and GitHub Actions to optimize workflows.
     </div>
     <div>
-      <Button size={"lg"} className="mt-10 bg-slate-950 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white" variant="outline"> Get in touch </Button>
+      <GetInTouch />
     </div>
   </div>
   </div>

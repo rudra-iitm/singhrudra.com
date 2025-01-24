@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useState, useEffect } from "react"
-import { Button } from "./ui/button"
+import Logo from "./ui/logo2"
 
 export default function Header() {
   const [active, setActive] = useState("01")
@@ -10,7 +10,7 @@ export default function Header() {
   const navigation = [
     { number: "01", label: "About", href: "#about" },
     { number: "02", label: "Experience", href: "#experience" },
-    { number: "03", label: "Work", href: "#work" },
+    { number: "03", label: "Work", href: "#works" },
   ]
 
   useEffect(() => {
@@ -39,9 +39,8 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4 py-4">
         <nav className="flex items-center justify-between">
           <Link href="/" className="text-violet-600 hover:text-violet-600/80 transition-colors">
-            Rudra
+            <Logo />
           </Link>
-
           <div className="flex items-center gap-10">
           <ul className="hidden md:flex items-center space-x-8 font-mono text-sm">
             {navigation.map((item) => (
@@ -58,7 +57,7 @@ export default function Header() {
               </li>
             ))}
           </ul>
-            <Button className="bg-slate-950 border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white" variant="outline"> Resume </Button>
+            <Link href={'https://drive.google.com/file/d/1YZaxq899E9CKva3Ch-5IV7fVhLem3ki0/view?usp=sharing'} target="_blank" className="border rounded-lg px-4 py-2 text-sm border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white"> Resume </Link>
           </div>
         </nav>
       </div>

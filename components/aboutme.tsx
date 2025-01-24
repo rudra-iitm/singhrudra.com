@@ -10,10 +10,10 @@ const technologies = {
 
 const AboutMe = () => {
   return (
-    <div className='min-h-lvh'>
-        <div className='text-3xl font-bold my-10 flex items-center gap-4'>
-            <span className='text-violet-600 text-2xl'>01.</span> About Me
-            <div className="h-[1px] w-96 bg-violet-600 glow-violet vertical" />
+    <div id='about' className='min-h-lvh p-16' >
+        <div className="text-3xl font-bold max-w-3xl my-10 flex items-center gap-4">
+          <span className="text-violet-600 text-2xl">01.</span> About Me
+          <div className="h-[1px] flex-grow bg-violet-600 glow-violet vertical" />
         </div>
         <div className='flex gap-12'>
             <div className='max-w-xl text-md text-gray-400'>

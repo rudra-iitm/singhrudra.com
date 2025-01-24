@@ -135,10 +135,10 @@ const Experience = () => {
       ];
 
   return (
-    <div className='min-h-lvh'>
-        <div className='text-3xl font-bold my-10 flex items-center gap-4'>
-            <span className='text-violet-600 text-2xl'>02.</span> Experience
-            <div className="h-[1px] w-96 bg-violet-600 glow-violet vertical" />
+    <div className='min-h-lvh p-16' id='experience'>
+        <div className="text-3xl font-bold max-w-3xl my-10 flex items-center gap-4">
+          <span className="text-violet-600 text-2xl">02.</span> Experience
+          <div className="h-[1px] flex-grow bg-violet-600 glow-violet vertical" />
         </div>
         <div className="h-[20rem] md:h-[40rem] mb-20 [perspective:1000px] relative b flex flex-col max-w-4xl mx-auto w-full items-start justify-start">
             <Tabs tabs={experiences}/>
