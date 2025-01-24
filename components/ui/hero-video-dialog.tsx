@@ -107,7 +107,7 @@ export default function HeroVideoDialog({
                 <iframe
                   src={videoSrc}
                   className="size-full rounded-2xl"
-                  allowFullScreen
+                  // allowFullScreen
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 ></iframe>
               </div>

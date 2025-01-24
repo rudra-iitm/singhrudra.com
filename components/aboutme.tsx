@@ -4,18 +4,18 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 const technologies = {
-    leftColumn: ["JavaScript", "Node.js", "Python", "Git", "NoSQL", "Kubernetes"],
-    rightColumn: ["Vue", "ReactJS", "Flutter", "SQL", "Docker", "AWS"],
+    leftColumn: ["JavaScript", "Node.js", "Typescript", "C++", "Git", "Docker"],
+    rightColumn: ["NextJS", "ReactJS", "TailwindCSS", "PostgreSQL", "Prisma", "TurboRepo"],
 }
 
 const AboutMe = () => {
   return (
-    <div id='about' className='min-h-lvh p-16' >
+    <div id='about' className='p-4 md:p-16'>
         <div className="text-3xl font-bold max-w-3xl my-10 flex items-center gap-4">
           <span className="text-violet-600 text-2xl">01.</span> About Me
           <div className="h-[1px] flex-grow bg-violet-600 glow-violet vertical" />
         </div>
-        <div className='flex gap-12'>
+        <div className='flex flex-col-reverse gap-12 md:flex-row md:gap-12'>
             <div className='max-w-xl text-md text-gray-400'>
                 Hello! I’m Rudra Pratap Singh, a BTech CSE student at IIT Mandi and a Full Stack Developer.
                 <br /><br />
@@ -56,7 +56,7 @@ const AboutMe = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
-                    className="relative group w-full max-w-md mx-auto md:w-96 aspect-square"
+                    className="relative group w-72 max-w-md mx-auto md:w-96 aspect-square"
                 >
                     <div className="absolute inset-0 rounded-full bg-violet-600/20 blur-2xl group-hover:bg-violet-600/30 transition-colors duration-500" />
                     <div className="relative w-full h-full">

@@ -22,7 +22,6 @@ const projects: ProjectProps[] = [
     tech: ["React", "TailwindCSS", "ShadCN", "Github Pages"],
     github: "https://github.com/rudra-iitm/rudra-iitm.github.io",
     projectLink: "https://rudra-iitm.github.io",
-    preview: "/portfolio-v1.mp4",
   },
   {
     name: "Web Dock",
@@ -31,6 +30,7 @@ const projects: ProjectProps[] = [
     github: "https://github.com/rudra-iitm/web-dock",
     projectLink: "https://web-dock.vercel.app",
     image: "/web-dock.png",
+    preview: "https://drive.google.com/file/d/1oAyzHRwyAeqgzsz57njGpMepT-3cwgKQ/preview",
   },
   {
     name: "Chess Actions",
@@ -39,6 +39,7 @@ const projects: ProjectProps[] = [
     github: "https://github.com/rudra-iitm/chess-actions",
     projectLink: "https://project3.com",
     image: "/chess-actions.png",
+    preview: "https://drive.google.com/file/d/1g9Mexu2PSJGiGgRmdt_brSrHfWo3-ZW8/preview",
   },
   {
     name: "Knight's Gambit",
@@ -49,7 +50,7 @@ const projects: ProjectProps[] = [
   },
   {
     name: "Portfolio v2",
-    description: "A real-time multiplayer chess game allowing users to connect randomly and engage with other online players or bot.",
+    description: "My latest personal portfolio website built with Next.js, TailwindCSS, and ShadCN. It is deployed on github pages.",
     tech: ["Next.js", "TailwindCSS", "Framer Motion", "Github Pages"],
     github: "https://github.com/rudra-iitm/singhrudra.com",
     projectLink: "https://singhrudra.com",
@@ -58,7 +59,7 @@ const projects: ProjectProps[] = [
 
 const Works = () => {
   return (
-    <div className="min-h-screen p-16" id="works">
+    <div id="works" className="p-4 md:p-16">
       <div className="text-3xl font-bold max-w-3xl my-10 flex items-center gap-4">
         <span className="text-violet-600 text-2xl">03.</span> Something I’ve Worked On
         <div className="h-[1px] flex-grow bg-violet-600 glow-violet vertical" />
@@ -79,7 +80,7 @@ function Project({ project, reversed = false }: { project: ProjectProps; reverse
         <div className={`relative flex flex-col ${reversed ? "md:flex-row-reverse" : "md:flex-row"} items-center`}>
           {/* Project Details */}
           <div
-            className={`w-full md:w-1/2 space-y-6 z-10 mb-2 relative ${reversed ? "md:pl-8 text-right" : "md:pr-8 text-left"}`}
+            className={`w-full md:w-1/2 space-y-6 z-10 mb-4 relative ${reversed ? "md:pl-8 text-right" : "md:pr-8 text-left"}`}
           >
             <div className="space-y-2">
               <p className="text-violet-600 font-mono">Featured Project</p>
@@ -101,7 +102,7 @@ function Project({ project, reversed = false }: { project: ProjectProps; reverse
               { project.preview &&
                 <HeroVideoDialog
                   animationStyle="from-center"
-                  videoSrc="project.preview"
+                  videoSrc={project.preview}
                 />
               }
               { project.projectLink &&
