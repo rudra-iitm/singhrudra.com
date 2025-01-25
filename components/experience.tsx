@@ -4,6 +4,7 @@ import { Tabs } from './ui/tabs';
 import { motion } from "framer-motion"
 import Link from 'next/link';
 import Image from 'next/image';
+import { LinkPreview } from './ui/link-preview';
 
 const techs = {
     leftColumn: ["Python", "Github Actions", "Docker", "Bash Scripting", "Git"],
@@ -95,9 +96,9 @@ const Experience = () => {
                       className="flex items-center gap-2 text-blue-400"
                     >
                       <span className="text-white">▹</span>
-                      <Link href={link.url} target="_blank" rel="noopener noreferrer">
+                      <LinkPreview url={link.url} className='text-blue-400'>
                         {link.name}
-                      </Link>
+                      </LinkPreview>
                     </motion.div>
                   ))}
                   {links.rightColumn.map((link, index) => (
@@ -112,9 +113,9 @@ const Experience = () => {
                       className="flex items-center gap-2 text-blue-400"
                     >
                       <span className="text-white">▹</span>
-                      <Link href={link.url} target="_blank" rel="noopener noreferrer">
+                      <LinkPreview url={link.url} className='text-blue-400'>
                         {link.name}
-                      </Link>
+                      </LinkPreview>
                     </motion.div>
                   ))}
                 </div>
@@ -210,50 +211,42 @@ const Experience = () => {
           <div className='space-y-4 block md:hidden'>
           <p>
         Worked on the{" "}
-        <Link
-          href="https://github.com/ubuntu/desktop-snap"
-          target="_blank"
-          rel="noopener noreferrer"
+        <LinkPreview
+          url="https://github.com/ubuntu/desktop-snaps"
           className="text-blue-400 underline"
         >
-          ubuntu/desktop-snap
-        </Link>{" "}
+          ubuntu/desktop-snaps
+        </LinkPreview>{" "}
         repository, implementing features like:
       </p>
       <ul className="list-disc list-inside text-sm space-y-1 my-2">
         <li>Version variation & beta release support</li>
         <li>Auto snap versioning</li>
         <li>Integration with{" "}
-          <Link
-            href="https://snapcraft.io/blog/introducing-rockcraft"
-            target="_blank"
-            rel="noopener noreferrer"
+          <LinkPreview
+            url="https://snapcraft.io/blog/introducing-rockcraft"
             className="text-blue-400 underline"
           >
             Rockcraft
-          </Link>
+          </LinkPreview>
         </li>
         <li>Parts listing with versions in README</li>
       </ul>
       <p>
         During{" "}
-        <Link
-          href="https://summerofcode.withgoogle.com/"
-          target="_blank"
-          rel="noopener noreferrer"
+        <LinkPreview
+          url="https://summerofcode.withgoogle.com/"
           className="text-blue-400 underline"
         >
           GSoC 2024
-        </Link>{" "}
+        </LinkPreview>{" "}
         with{" "}
-        <Link
-          href="https://linuxfoundation.org/"
-          target="_blank"
-          rel="noopener noreferrer"
+        <LinkPreview
+          url="https://linuxfoundation.org/"
           className="text-blue-400 underline"
         >
           The Linux Foundation
-        </Link>
+        </LinkPreview>
         , I packaged CUPS & Printer Apps into OCI images for{" "}
         <Link
           href="https://openprinting.github.io/"
@@ -269,14 +262,12 @@ const Experience = () => {
           <div className="space-y-4 hidden md:block">
             <p>
               I contributed to the{" "}
-              <Link
-                href="https://github.com/ubuntu/desktop-snaps"
-                target="_blank"
-                rel="noopener noreferrer"
+              <LinkPreview
+                url="https://github.com/ubuntu/desktop-snaps"
                 className="text-blue-400 underline"
               >
                 ubuntu/desktop-snaps
-              </Link>{" "}
+              </LinkPreview>{" "}
               repository, which is a collection of automation tools required for
               managing snaps on the Ubuntu desktop.
             </p>
@@ -297,14 +288,12 @@ const Experience = () => {
               <li>
                 <strong>Integration with Rockcraft</strong>: Extended the
                 repository’s functionality to work seamlessly with{" "}
-                <Link
-                  href="https://github.com/canonical/rockcraft"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <LinkPreview
+                  url="https://github.com/canonical/rockcraft"
                   className="text-blue-400 underline"
                 >
                   Rockcraft
-                </Link>
+                </LinkPreview>
                 .
               </li>
               <li>
@@ -318,23 +307,19 @@ const Experience = () => {
             <p>
               Additionally, I implemented snap versioning and part automation
               workflows in the{" "}
-              <Link
-                href="https://openprinting.github.io/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <LinkPreview
+                url="https://openprinting.github.io/"
                 className="text-blue-400 underline"
               >
                 OpenPrinting Printer Applications
-              </Link>
+              </LinkPreview>
               . As part of my Google Summer of Code (GSoC) 2024 project with{" "}
-              <Link
-                href="https://linuxfoundation.org/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <LinkPreview
+                url="https://linuxfoundation.org/"
                 className="text-blue-400 underline"
               >
                 The Linux Foundation
-              </Link>
+              </LinkPreview>
               , I worked on packaging CUPS and Printer Applications into OCI (Open
               Container Initiative) images.
             </p>

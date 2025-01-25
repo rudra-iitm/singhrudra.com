@@ -1,11 +1,80 @@
+"use client";
+
+import { Github, Linkedin, Twitter } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Footer = () => {
-    return (
-      <div className={`mb-16 px-4 lg:px-36 text-center text-xs font-extralight tracking-widest text-slate-400 group-hover:text-slate-200 group-focus-visible:text-slate-200`} style={{ fontFamily: 'Arial, sans-serif'}}>
-          Coded in Visual Studio Code. Built with Next.js and Tailwind CSS. Hosted on Github Pages.<br></br>
-          <p className="pt-2 text-sm">Rudra’s Tech © 2025</p>
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  };
+
+  return (
+    <div className="flex flex-col items-center gap-4">
+      <motion.div
+        className="block xl:hidden"
+        initial="hidden"
+        animate="show"
+        variants={container}
+      >
+        <div className="flex gap-6">
+          <motion.div variants={item}>
+            <Link
+              href="https://github.com/rudra-iitm"
+              target="_blank"
+              className="block p-2"
+              aria-label="GitHub Profile"
+            >
+              <Github className="w-5 h-5 text-gray-400 hover:text-violet-600 transform hover:-translate-y-1 transition-all duration-300" />
+            </Link>
+          </motion.div>
+
+          <motion.div variants={item}>
+            <Link
+              href="https://www.linkedin.com/in/rudra-iitm/"
+              target="_blank"
+              className="block p-2"
+              aria-label="LinkedIn Profile"
+            >
+              <Linkedin className="w-5 h-5 text-gray-400 hover:text-violet-600 transform hover:-translate-y-1 transition-all duration-300" />
+            </Link>
+          </motion.div>
+
+          <motion.div variants={item}>
+            <Link
+              href="https://x.com/rudransh_rps"
+              target="_blank"
+              className="block p-2"
+              aria-label="Twitter Profile"
+            >
+              <Twitter className="w-5 h-5 text-gray-400 hover:text-violet-600 transform hover:-translate-y-1 transition-all duration-300" />
+            </Link>
+          </motion.div>
+        </div>
+      </motion.div>
+      <div
+        className={`mb-16 px-4 lg:px-36 text-center text-xs font-extralight tracking-widest text-slate-400 group-hover:text-slate-200 group-focus-visible:text-slate-200`}
+        style={{ fontFamily: "Arial, sans-serif" }}
+      >
+        Coded in Visual Studio Code. Built with Next.js and Tailwind CSS. Hosted
+        on GitHub Pages.
+        <br />
+        <p className="pt-2 text-sm">Rudra’s Tech © 2025</p>
       </div>
-    )
-  }
-  
-  export default Footer
+    </div>
+  );
+};
+
+export default Footer;

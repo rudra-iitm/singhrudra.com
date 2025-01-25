@@ -8,9 +8,9 @@ export default function Header() {
   const [active, setActive] = useState("01")
 
   const navigation = [
-    { number: "01", label: "About", href: "#about" },
-    { number: "02", label: "Experience", href: "#experience" },
-    { number: "03", label: "Work", href: "#works" },
+    { number: "01", label: "About", href: "/#about" },
+    { number: "02", label: "Experience", href: "/#experience" },
+    { number: "03", label: "Work", href: "/#works" },
   ]
 
   useEffect(() => {
