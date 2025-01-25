@@ -11,6 +11,7 @@ export default function Header() {
     { number: "01", label: "About", href: "/#about" },
     { number: "02", label: "Experience", href: "/#experience" },
     { number: "03", label: "Work", href: "/#works" },
+    {number: "04", label: "Blogs", href: "/blogs"}
   ]
 
   useEffect(() => {

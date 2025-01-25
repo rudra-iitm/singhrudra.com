@@ -47,6 +47,15 @@ export default function Home() {
             </Link>
         </div>
       </div>
+      <div className="md:hidden flex flex-col md:items-center space-y-4 mb-16 p-4">
+          <h1 className="text-3xl font-bold">Few of my Blog Posts</h1>
+          <div className="hover:decoration-solid hover:underline">
+            <Link href={'/blogs'} className="text-violet-600 flex items-center">
+            Blog Posts
+            <ArrowRightCircleIcon className="ml-2 h-4 w-4" />
+            </Link>
+        </div>
+      </div>
       </div>
       </motion.div>
         }
