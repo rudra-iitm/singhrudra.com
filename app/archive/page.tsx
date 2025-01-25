@@ -89,10 +89,10 @@ export default function Home() {
     ];
 
   return (
-    <div className="min-h-lvh p-16 flex flex-col items-center justify-center">
-        <div className="text-center">
-            <h1 className="text-5xl font-bold text-gray-300 mt-12">Project Archive</h1>
-            <p className="text-lg text-violet-600 mt-4">
+    <div className="min-h-lvh py-12 md:p-16 flex flex-col md:items-center md:justify-center">
+        <div className="md:text-center mx-12">
+            <h1 className="text-3xl md:text-5xl font-bold text-gray-300 mt-12">Project Archive</h1>
+            <p className="text-base md:text-lg mb-8 md:mb-0 text-violet-600 mt-4">
                 A collection of some of my past projects
             </p>
         </div>
