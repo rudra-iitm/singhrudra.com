@@ -70,7 +70,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               </h3>
               {item.content}{" "}
               <div className="flex justify-start mt-4 hover:decoration-solid hover:underline">
-              <Link href={item.url} className="text-violet-600 flex items-center">
+              <Link href={item.url} target="blank" className="text-violet-600 text-sm flex items-center">
               Read More
               <ArrowRightCircleIcon className="ml-2 h-4 w-4" />
             </Link>
