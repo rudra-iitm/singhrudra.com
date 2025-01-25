@@ -58,7 +58,7 @@ export default function Header() {
               </li>
             ))}
           </ul>
-            <Link href={'https://drive.google.com/file/d/1TuVq73fAcq5JaphZuwhGw4JbylSHhIn0/view'} target="_blank" className="border rounded-lg px-4 py-2 text-sm border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white"> Resume </Link>
+            <Link href={'/resume'} className="border rounded-lg px-4 py-2 text-sm border-violet-600 text-violet-600 hover:bg-violet-600 hover:text-white"> Resume </Link>
           </div>
         </nav>
       </div>
