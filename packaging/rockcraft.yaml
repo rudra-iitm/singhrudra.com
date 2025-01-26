@@ -9,6 +9,8 @@ description: |
 
 platforms:
   arm64:
+  amd64:
+  armhf:
 
 services:
   server:
