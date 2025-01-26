@@ -64,4 +64,3 @@ jobs:
           GITHUB_IMAGE="ghcr.io/rudra-iitm/portfolio"
           docker tag rudra-iitm/portfolio:v2 ${GITHUB_IMAGE}:v2
           docker push ${GITHUB_IMAGE}:v2
-          docker push ${GITHUB_IMAGE}:latest
