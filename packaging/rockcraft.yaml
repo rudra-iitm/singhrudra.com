@@ -28,14 +28,19 @@ parts:
       out: /out
     override-build: |
       set -eux
+      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+      [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+      nvm install 20.0.0
+      node -v
+      npm -v
       npm install -g yarn
       yarn add typescript eslint @types/react @types/node --dev
       yarn
       yarn build
     build-packages:
       - curl
-      - nodejs
-      - npm
 
   nginx:
     plugin: nil
