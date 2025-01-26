@@ -3,8 +3,25 @@
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import Logo from "./ui/logo2"
+import {motion} from "framer-motion"
 
 export default function Header() {
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 0.8,
+      },
+    },
+  }
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  }
+
   const [active, setActive] = useState("01")
 
   const navigation = [
@@ -36,12 +53,18 @@ export default function Header() {
   }, [])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur">
+    <motion.div       
+    initial="hidden"
+    animate="show"
+    variants={container}  
+    className="fixed top-0 left-0 right-0 z-50 backdrop-blur">
       <div className="mx-auto max-w-7xl px-4 py-4">
         <nav className="flex items-center justify-between">
+          <motion.div variants={item}>
           <Link href="/" className="text-violet-600 hover:text-violet-600/80 transition-colors">
             <Logo />
           </Link>
+          </motion.div>
           <div className="flex items-center gap-10">
           <ul className="hidden md:flex items-center space-x-8 font-mono text-sm">
             {navigation.map((item) => (
@@ -62,6 +85,6 @@ export default function Header() {
           </div>
         </nav>
       </div>
-    </header>
+    </motion.div>
   )
 }
