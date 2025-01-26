@@ -1,0 +1,53 @@
+name: singhrudra-com
+base: ubuntu@22.04
+version: '0.1'
+summary: Personal Portfolio Website
+description: |
+  This is my personal portfolio website built using Next.js, TailwindCSS, and ShadCN.
+  The site showcases my projects, skills, and professional journey.
+  It is deployed on GitHub Pages and designed for a seamless and responsive user experience.
+
+platforms:
+  arm64:
+
+services:
+  server:
+    command: /scripts/nginx.sh
+    override: replace
+    on-failure: restart
+    startup: enabled
+
+parts:
+  portfolio:
+    plugin: dump
+    source: https://github.com/rudra-iitm/singhrudra.com.git
+    source-type: git
+    organize:
+      out: /out
+    override-build: |
+      set -eux
+      curl -fsSL https://deb.nodesource.com/setup_21.x | bash -
+      npm install -g yarn
+      yarn add typescript eslint @types/react @types/node --dev
+      yarn
+      yarn build
+    build-packages:
+      - curl
+      - nodejs
+
+  nginx:
+    plugin: nil
+    overlay-packages:
+      - nginx
+
+  scripts:
+    plugin: dump
+    source: scripts/
+    organize:
+      nginx.sh: /scripts/nginx.sh
+    override-prime: |
+      set -eux
+      craftctl default
+      if [ -f "$CRAFT_PRIME/scripts/nginx.sh" ]; then
+        chmod +x "$CRAFT_PRIME/scripts/nginx.sh"
+      fi

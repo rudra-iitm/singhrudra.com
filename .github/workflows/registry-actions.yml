@@ -1,0 +1,67 @@
+name: Pack and Publish Portfolio OCI Image to GitHub Packages
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Deploy Next.js site to Pages"]
+    types:
+      - completed
+
+jobs:
+  build-rock:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Pack with Rockcraft
+        uses: canonical/craft-actions/rockcraft-pack@main
+        id: rockcraft
+        with:
+          path: packaging
+
+      - name: Upload Rock Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio
+          path: ${{ steps.rockcraft.outputs.rock }}
+
+  publish-rock:
+    needs: build-rock
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Download Rock Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: portfolio
+
+      - name: Install Dependencies
+        run: |
+          sudo snap install rockcraft --classic
+          sudo snap install docker
+          sudo snap install yq
+
+      - name: Ensure Docker Daemon Is Running
+        run: |
+          sudo systemctl enable docker
+          sudo systemctl is-active --quiet docker || sudo systemctl start docker
+
+      - name: Log in to GitHub Packages
+        uses: docker/login-action@v3.2.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and Push Docker Image
+        run: |
+          ROCK="$(ls *.rock | tail -n 1)"
+          sudo rockcraft.skopeo --insecure-policy copy oci-archive:"${ROCK}" docker-daemon:"rudra-iitm/portfolio:v2"
+          # Push to GitHub Packages
+          GITHUB_IMAGE="ghcr.io/rudra-iitm/portfolio"
+          docker tag rudra-iitm/portfolio:v2 ${GITHUB_IMAGE}:v2
+          docker push ${GITHUB_IMAGE}:v2
+          docker push ${GITHUB_IMAGE}:latest
