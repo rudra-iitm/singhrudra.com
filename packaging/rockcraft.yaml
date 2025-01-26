@@ -28,7 +28,6 @@ parts:
       out: /out
     override-build: |
       set -eux
-      curl -fsSL https://deb.nodesource.com/setup_21.x | bash -
       npm install -g yarn
       yarn add typescript eslint @types/react @types/node --dev
       yarn
@@ -36,6 +35,7 @@ parts:
     build-packages:
       - curl
       - nodejs
+      - npm
 
   nginx:
     plugin: nil
