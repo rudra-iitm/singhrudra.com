@@ -24,8 +24,6 @@ parts:
     plugin: dump
     source: https://github.com/rudra-iitm/singhrudra.com.git
     source-type: git
-    organize:
-      out: /out
     override-build: |
       set -eux
       curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -37,6 +35,7 @@ parts:
       yarn add typescript eslint @types/react @types/node --dev
       yarn
       yarn build
+      cp -r out/ $CRAFT_PART_INSTALL/out/
     build-packages:
       - curl
 
