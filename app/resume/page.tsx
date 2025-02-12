@@ -19,7 +19,7 @@ export default function Home() {
                 <div className="flex mt-4 gap-4 mb-4">
                     <motion.div variants={item}>
                         <a
-                            href="https://drive.google.com/uc?export=download&id=1TuVq73fAcq5JaphZuwhGw4JbylSHhIn0"
+                            href="https://drive.google.com/uc?export=download&id=10pJMYcRir7OIQyHQeFoCnZg8dgorPmj3"
                             download
                             className="block p-2"
                             aria-label="Download Resume"
@@ -29,7 +29,7 @@ export default function Home() {
                     </motion.div>
                     <motion.div variants={item}>
                         <Link
-                            href="https://drive.google.com/file/d/1TuVq73fAcq5JaphZuwhGw4JbylSHhIn0/view"
+                            href="https://drive.google.com/file/d/10pJMYcRir7OIQyHQeFoCnZg8dgorPmj3/view"
                             target="_blank"
                             className="block p-2"
                             aria-label="View Resume"
@@ -52,7 +52,7 @@ export default function Home() {
                         <div className="absolute inset-0 rounded-xl bg-violet-600/10 backdrop-blur-sm" />
                         <div className="relative w-full h-full rounded-xl overflow-hidden border-2 border-violet-600">
                             <iframe
-                                src="https://drive.google.com/file/d/1TuVq73fAcq5JaphZuwhGw4JbylSHhIn0/preview"
+                                src="https://drive.google.com/file/d/10pJMYcRir7OIQyHQeFoCnZg8dgorPmj3/preview"
                                 className="w-full h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-500"
                                 title="Resume Preview"
                                 loading="lazy"
