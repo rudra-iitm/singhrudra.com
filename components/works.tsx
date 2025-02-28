@@ -17,6 +17,15 @@ export interface ProjectProps {
 
 const projects: ProjectProps[] = [
   {
+    name: "InnovateX",
+    description: "InnovateX is an AI-powered, low-code website builder that enables users to create stunning, responsive websites effortlessly.",
+    tech: ["NextJS", "TailwindCSS", "ShadCN", "Vercel API", "Web Containers", "Agent.ai", "Clerk Auth", "Docker", "PostgreSQL", "Prisma ORM"],
+    github: "https://github.com/rudra-iitm/InnovateX",
+    projectLink: "https://innovate-x-six.vercel.app/",
+    image: "/archives/innovate-x.png",
+    preview: "https://www.youtube.com/embed/i9oG8GSS9xo?si=r7sV3yfw1ZhCyaRb",
+  },
+  {
     name: "Potfolio v1",
     description: "A personal portfolio website built with React, TailwindCSS, and ShadCN. It is deployed on github pages and coded in VS Code.",
     tech: ["React", "TailwindCSS", "ShadCN", "Github Pages"],

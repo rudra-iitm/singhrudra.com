@@ -5,6 +5,17 @@ export default function Home() {
     const projects = [
         {
             timeline: '2025',
+            project: 'InnovateX',
+            builtWith: 'NextJS, TailwindCSS, ShadCN, Clerk Auth, Prisma, PostgreSQL, Web Containers, Docker, Vercel API, Agent.ai',
+            shortDescription: 'InnovateX is an AI-powered, low-code website builder that enables users to create stunning, responsive websites effortlessly.',
+            description:
+                "InnovateX is an AI-powered, low-code website builder that enables users to create stunning, responsive websites effortlessly. With cutting-edge features like web containers, Clerk authentication, and Agent.ai integration, users can design and deploy websites with ease. Powered by Next.js, TailwindCSS, and ShadCN, InnovateX is the future of web development.",
+            image: '/archives/innovate-x.png',
+            githubLink: 'https://github.com/rudra-iitm/innovatex',
+            preview: 'https://www.youtube.com/embed/i9oG8GSS9xo?si=r7sV3yfw1ZhCyaRb',
+        },
+        {
+            timeline: '2025',
             project: 'Portfolio v2',
             builtWith: 'NextJS, TailwindCSS, Framer Motion, Github Pages, ShadCN, Aceternity UI',
             shortDescription: 'A revamped personal portfolio showcasing skills, projects, and experience, built with Next.js and styled using modern frameworks like TailwindCSS and ShadCN.',
